@@ -1,4 +1,11 @@
-// variables
+// VARS
+//--nav variables
+const navBtn = document.querySelector(".nav-btn");
+const closeNavBtn = document.querySelector(".close-nav");
+const navDOM = document.querySelector(".nav-slide");
+const navOverlay = document.querySelector(".nav-overlay");
+let navslide = [];
+//--cart variables
 const cartBtn = document.querySelector(".cart-btn");
 const closeCartBtn = document.querySelector(".close-cart");
 const clearCartBtn = document.querySelector(".clear-cart");
@@ -96,7 +103,6 @@ class UI {
     cartTotal.innerText = parseFloat(tempTotal.toFixed(2));
     cartItems.innerText = itemsTotal;
   }
-
   addCartItem(item) {
     const div = document.createElement("div");
     div.classList.add("cart-item");
@@ -125,12 +131,18 @@ class UI {
     cartOverlay.classList.add("transparentBcg");
     cartDOM.classList.add("showCart");
   }
+  showNav() {
+    navOverlay.classList.add("transparentBcg");
+    navDOM.classList.add("showNav");
+  }
   setupAPP() {
     cart = Storage.getCart();
     this.setCartValues(cart);
     this.populateCart(cart);
     cartBtn.addEventListener("click", this.showCart);
     closeCartBtn.addEventListener("click", this.hideCart);
+    navBtn.addEventListener("click", this.showNav);
+    closeNavBtn.addEventListener("click", this.hideNav);
   }
   populateCart(cart) {
     cart.forEach(item => this.addCartItem(item));
@@ -138,6 +150,10 @@ class UI {
   hideCart() {
     cartOverlay.classList.remove("transparentBcg");
     cartDOM.classList.remove("showCart");
+  }
+  hideNav() {
+    navOverlay.classList.remove("transparentBcg");
+    navDOM.classList.remove("showNav");
   }
   cartLogic() {
     clearCartBtn.addEventListener("click", () => {
@@ -248,3 +264,50 @@ document.addEventListener("DOMContentLoaded", () => {
       ui.cartLogic();
     });
 });
+
+// smooth scrolling navlinks
+function smoothScroll(target, duration) {
+  var target = document.querySelector(target);
+  var targetPosition = target.getBoundingClientRect().top;
+  var startPosition = window.pageYOffset;
+  var distance = targetPosition - startPosition;
+  var startTime = null;
+
+  function animation(currentTime) {
+    if (startTime === null) startTime = currentTime;
+    var timeElapsed = currentTime - startTime;
+    var run = ease(timeElapsed, startPosition, distance, duration);
+    window.scrollTo(0, run);
+    if (timeElapsed < duration) requestAnimationFrame(animation);
+
+    console.log('timeElapsed : ' + timeElapsed + 'duration: ' + duration);
+  }
+
+  function ease(t, b, c, d) {
+    t /= d / 2;
+    if (t < 1) return c / 2 * t * t * t + b;
+    t -= 2;
+    return c / 2 * (t * t * t + 2) + b;
+  };
+
+  requestAnimationFrame(animation);
+}
+
+var homeLink = document.querySelector('.home-link');
+var aboutLink = document.querySelector('.about-link');
+var productsLink = document.querySelector('.products-link');
+var contactLink = document.querySelector('.contact-link');
+
+
+homeLink.addEventListener('click', function () {
+  smoothScroll('.navbar', 2000);
+})
+aboutLink.addEventListener('click', function () {
+  smoothScroll('.about-us', 2000);
+})
+productsLink.addEventListener('click', function () {
+  smoothScroll('.products', 2000);
+})
+contactLink.addEventListener('click', function () {
+  smoothScroll('.contact-us', 2000);
+})
