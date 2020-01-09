@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css?family=Beth+Ellen|Darker+Grotesque&display=swap');
 
 :root {
-    --primaryColor: rgba(126, 29, 29, 0.9);
+    --primaryColor: #901;
     --mainWhite: #fff;
     --mainBlack: #222;
     --mainGrey: #ececec;
@@ -47,6 +47,11 @@ body {
   }
   .nav-icon {
     font-size: 1.5rem;
+    cursor: pointer;
+  }
+  .nav-btn {
+    position: relative;
+    cursor: pointer;
   }
   .cart-btn {
     position: relative;
@@ -62,6 +67,92 @@ body {
     color: var(--mainWhite);
   }
   /* --------------- End of Navbar ---------------- */
+  /* --------------- Nav Links ---------------- */
+    /*comment out visibility in ".nav-overlay" & transform in ".nav" to see nav before creating app.js */
+  .nav-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: var(--mainTransition);
+    background: rgba(126, 29, 29, 0.5);
+    z-index: 2;
+    visibility: hidden; 
+  }
+  .nav-slide {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vh;
+    height: 100vh;
+    z-index: 3;
+    background: var(--mainGrey);
+    padding: 1.5rem;
+    transition: var(--mainTransition);
+    transform: translateX(-100%);
+  }
+  .nav-links {
+    position: absolute;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+  }
+  .nav-links li {
+    list-style: none;
+    padding: 20px;
+  }
+  .nav-links a {
+    text-decoration: none;
+    font-family: var(--font1);
+    color: var(--primaryColor);
+  }
+
+  /* javascript classes */
+  .showNav {
+    transform: translateX(0);
+  }
+  .transparentBcg {
+    visibility: visible;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .nav-slide {
+      width: 20vw;
+      min-width: 250px;
+      margin: auto;
+    }
+  }
+  
+  .close-nav {
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .close-nav i {
+    float: right;
+  }
+  @media screen and (min-width: 375px) {
+    .nav-slide {
+      width: 20vw;
+      min-width: 250px;
+      margin: auto;
+    }
+  }
+  
+  .close-nav {
+    font-size: 1.7rem;
+    cursor: pointer;
+  }
+  .close-nav i {
+    float: left;
+  }
+
+  ul.nav-links {
+    margin: 110px;
+  }
+  /* --------------- End of Nav Links ---------------- */
+
   /* --------------- Hero ---------------- */
   .hero {
     min-height: calc(100vh - 60px); /* 100% of screen size minus height of navbar */
@@ -99,8 +190,33 @@ body {
     color: var(--primaryColor);
   }
   /* --------------- End of Hero ---------------- */
+
+  /* --------------- About Us ---------------- */
+  .about-us {
+    background-color: var(--primaryColor);
+    padding: 5em 0;
+    text-align: center;
+    letter-spacing: var(--mainSpacing);
+  }
+  .about-us h3 {
+    font-family: var(--font1);
+    color: var(--textBrown);
+    position: relative;
+    font-size: 1.5em;
+  }
+  .about-us button {
+    background: var(--mainWhite);
+    color: var(--primaryColor);
+    border: 1px solid var(--mainWhite);
+    margin-top: 3em;
+  }
+  .about-us button:hover {
+    background: transparent;
+    color: var(--mainWhite);
+  }
+  /* --------------- End of About Us ---------------- */
+
   /* --------------- Products ---------------- */
-  
   .products {
     padding: 4rem 0;
   }
@@ -176,8 +292,11 @@ body {
     color: var(--primaryColor);
     text-align: center;
   }
-  
   /* ---------------End of Products ---------------- */
+
+  /* ---------------Contact Us ---------------- */
+  /* ---------------End of Contact Us ---------------- */
+
   /* --------------- Cart ---------------- */
     /*comment out visibility in ".cart-overlay" & transform in ".cart" to see cart before creating app.js */
   .cart-overlay {
@@ -219,7 +338,7 @@ body {
       min-width: 450px;
     }
   }
-  
+
   .close-cart {
     font-size: 1.7rem;
     cursor: pointer;
@@ -265,7 +384,6 @@ body {
     cursor: pointer;
   }
   /*---------- End of Cart Item -------------------- */
-  
   .cart-footer {
     margin-top: 2rem;
     letter-spacing: var(--mainSpacing);
@@ -275,5 +393,4 @@ body {
     text-transform: capitalize;
     margin-bottom: 1rem;
   }
-  
   /* --------------- End of Cart ---------------- */
