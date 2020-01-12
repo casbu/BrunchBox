@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Brunch Box</title>
+  <title>BrunchBox Subscription Box</title>
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/ddf770238b.js" crossorigin="anonymous"></script>
   <!-- custom css -->
@@ -13,7 +13,7 @@
 </head>
 
 <body>
-  <!-- NAVBAR -->
+  <!-- Navbar -->
   <nav class="navbar">
     <div class="navbar-center">
       <div class="nav-btn">
@@ -30,8 +30,8 @@
       </div>
     </div>
   </nav>
-  <!-- END OF NAVBAR -->
-  <!-- NAV SLIDE -->
+  <!-- End of Navbar -->
+  <!-- Nav Slide -->
   <!-- nav background overlay -->
   <div class="nav-overlay">
     <div class="nav-slide">
@@ -54,21 +54,47 @@
       </ul>
     </div>
   </div>
-  <!-- HERO -->
+  <!-- Hero -->
   <header class="hero">
     <div class="banner">
-      <h1 class="banner-title">Wine, Cheese, & Charcuterie</h1>
-      <button class="banner-btn">shop now</button>
+      <h1 class="banner-title">wine, cheese, & charcuterie</h1>
+      <h2>straight to your door, hassle-free.</h2>
+      <button class="banner-btn">get started</button>
+      <p style="text-align: center; line-height: 29px;">
+        <span style="font-size: 12px; color: var(--primaryColor);">
+          <span>Already a member?</span>
+          <a data-action="url" data-params="true" href="#" target="_self">
+            <span style="font-size: 12px; color: var(--primaryColor);">
+              <strong>
+                <u>Sign in</u>
+              </strong>
+            </span>
+          </a>
+        </span>
+      </p>
+
     </div>
   </header>
-  <!-- END OF HERO -->
-  <!-- ABOUT US -->
-  <section class="about-us">
-    <h3>Everything you need to set up a quick brunch with friends.</h3>
-    <button class="banner-btn">Create your free account now!</button>
-  </section>
-  <!-- END OF ABOUT US -->
-  <!-- PRODUCTS -->
+  <!-- End of Hero -->
+  <!-- About Us -->
+  <div class="about-us">
+    <section class="section-red">
+      <h3>Everything you need for a nice brunch with friends.</h3>
+      <button class="banner-btn">shop now</button>
+    </section>
+  </div>
+  <!-- End of About Us -->
+  <!-- Instagram -->
+  <div class="instagram-block">
+    <h2>#brunchbox</h2>
+    <div class="insta-images">
+      <img src="images/instagram1.jpg" alt="">
+      <img src="images/instagram2.jpg" alt="">
+      <img src="images/instagram3.jpg" alt="">
+    </div>
+  </div>
+  <!-- End of Instagram -->
+  <!-- Products -->
   <section class="products">
     <div class="section-title">
       <h2>our products</h2>
@@ -89,15 +115,82 @@
       <!-- end of single product -->
     </div>
   </section>
-  <!-- END OF PRODUCTS -->
-  <!-- CONTACT US -->
-  <section class="contact-us">
-    <div class="section-title">
-      <h2>contact us</h2>
+  <!-- End of Products -->
+  <!-- Services -->
+  <section class="services" id="services">
+    <ul>
+      <li class="service-item">
+        <figure>
+          <img src="images/ui-local.png" alt="local grower illustration">
+          <figcaption>
+            <h3>Local Farmers</h3>
+          </figcaption>
+        </figure>
+        <p>
+          We only use local businesses near you!
+        </p>
+      </li>
+      <li class="service-item">
+        <figure>
+          <img src="images/ui-shipping.png" alt="shipping illustration">
+          <figcaption>
+            <h3>Shipping</h3>
+          </figcaption>
+        </figure>
+        <p>
+          Shipped right to your door.<br>Hassle-free!
+        </p>
+      </li>
+      <li class="service item">
+        <figure>
+          <img src="images/ui-catering.png" alt="catering illustration">
+          <figcaption>
+            <h3>Catering</h3>
+          </figcaption>
+        </figure>
+        <p>
+          Sit back, relax,<br>and let us do our thing!
+        </p>
+      </li>
+    </ul>
+  </section>
+  <!-- End of Services -->
+  <!-- Contact Us -->
+  <section class="section-contact">
+    <div class="contact-us">
+      <span class="contact-symbol">
+        <i class="fas fa-envelope"></i>
+      </span>
+      <form class="contact-form validate-form flex-sb flex-w">
+        <span class="contact-form-title">Drop Us a Message!</span>
+        <div class="wrap-input rs1 validate-input" data-validate="Name is required">
+          <input class="input" type="text" name="name" placeholder="Name">
+          <span class="focus-input"></span>
+        </div>
+        <div class="wrap-input rs1 validate-input" data-validate="Email is required: e@a.z">
+          <input class="input" type="text" name="email" placeholder="Email Address">
+          <span class="focus-input"></span>
+        </div>
+        <div class="wrap-input rs1 validate-input" data-validate="Subject is required">
+          <input class="input" type="text" name="subject" placeholder="Subject">
+          <span class=" focus-input"></span>
+        </div>
+        <div class="wrap-input rs1 validate-input">
+          <input class="input" type="text" name="id" placeholder="Order ID">
+          <span class="focus-input"></span>
+        </div>
+        <div class="wrap-input validate-input" data-validate="Message is required:">
+          <textarea class="input" name="message" placeholder="Write Your Message Here..."></textarea>
+          <span class="focus-input"></span>
+        </div>
+        <div class="contact-form-btn">
+          <button class="banner-btn">Send</button>
+        </div>
+      </form>
     </div>
   </section>
-  <!-- END OF CONTACT US -->
-  <!-- CART -->
+  <!-- End of Contact Us -->
+  <!-- Cart -->
   <!-- cart background overlay -->
   <div class="cart-overlay">
     <div class="cart">
@@ -118,7 +211,7 @@
       </div>
     </div>
   </div>
-  <!-- END OF CART -->
+  <!-- End of Cart -->
 
   <script src="app.js"></script>
 </body>
