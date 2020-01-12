@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Beth+Ellen|Darker+Grotesque&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Beth+Ellen|Darker+Grotesque|Open+Sans&display=swap');
 
 :root {
     --primaryColor: #901;
@@ -6,9 +6,10 @@
     --mainBlack: #222;
     --mainGrey: #ececec;
     --mainBrown: rgb(143,122,122);
-    --textBrown: #3D2117;
+    --mainBrown: #3D2117;
     --font1: 'Beth Ellen', cursive;
     --font2: 'Darker Grotesque', sans-serif;
+    --font3: 'Open Sans', sans-serif;
     --mainSpacing: 0.1rem;
     --mainTransition: all 0.3s linear;
 }
@@ -20,377 +21,588 @@
 }
 
 body {
-    color: var(--textBrown);
+    color: var(--mainBrown);
     background: var(--mainWhite);
     font-family: var(--font2);
 }
 
+div {
+  display: block;
+}
+
+.col-1 {width: 8.33%;}
+.col-2 {width: 16.66%;}
+.col-3 {width: 25%;}
+.col-4 {width: 33.33%;}
+.col-5 {width: 41.66%;}
+.col-6 {width: 50%;}
+.col-7 {width: 58.33%;}
+.col-8 {width: 66.66%;}
+.col-9 {width: 75%;}
+.col-10 {width: 83.33%;}
+.col-11 {width: 91.66%;}
+.col-12 {width: 100%;}
+
 /* --------------- Navbar ---------------- */
 .navbar {
-    position: sticky; /* allows navbar to stick */
-    top: 0;
-    height: 60px;
-    width: 100%;
-    display: flex; /* just to align vertically in center because navbar has one child which is navbar-center */
-    align-items: center;
-    background: var(--mainGrey);
-    z-index: 1;
-  }
-  .navbar-center {
-    width: 100%;
-    max-width: 1170px; /* so it never gets wider than necessary when extended to larger screens for readability */
-    margin: 0 auto;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 1.5rem;
-  }
-  .nav-icon {
-    font-size: 1.5rem;
-    cursor: pointer;
-  }
-  .nav-btn {
-    position: relative;
-    cursor: pointer;
-  }
-  .cart-btn {
-    position: relative;
-    cursor: pointer;
-  }
-  .cart-items {
-    position: absolute;
-    top: -8px;
-    right: -8px;
-    background: var(--primaryColor);
-    padding: 0 5px;
-    border-radius: 30%;
-    color: var(--mainWhite);
-  }
-  /* --------------- End of Navbar ---------------- */
-  /* --------------- Nav Links ---------------- */
-    /*comment out visibility in ".nav-overlay" & transform in ".nav" to see nav before creating app.js */
-  .nav-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    transition: var(--mainTransition);
-    background: rgba(126, 29, 29, 0.5);
-    z-index: 2;
-    visibility: hidden; 
-  }
+  position: sticky; /* allows navbar to stick */
+  top: 0;
+  height: 60px;
+  width: 100%;
+  display: flex; /* just to align vertically in center because navbar has one child which is navbar-center */
+  align-items: center;
+  background: var(--mainGrey);
+  z-index: 1;
+}
+.navbar-center {
+  width: 100%;
+  max-width: 1170px; /* so it never gets wider than necessary when extended to larger screens for readability */
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 1.5rem;
+}
+.navbar-center img {
+  font-size: 2em;
+}
+.nav-icon {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+.nav-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-btn {
+  position: relative;
+  cursor: pointer;
+}
+.cart-items {
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background: var(--primaryColor);
+  padding: 0 5px;
+  border-radius: 30%;
+  color: var(--mainWhite);
+}
+/* --------------- End of Navbar ---------------- */
+/* --------------- Nav Links ---------------- */
+  /*comment out visibility in ".nav-overlay" & transform in ".nav" to see nav before creating app.js */
+.nav-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgba(126, 29, 29, 0.5);
+  z-index: 2;
+  visibility: hidden; 
+}
+.nav-slide {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vh;
+  height: 100vh;
+  z-index: 3;
+  background: var(--mainGrey);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(-100%);
+}
+.nav-links {
+  position: absolute;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  left: 0;
+}
+.nav-links li {
+  list-style: none;
+  padding: 20px;
+}
+.nav-links a {
+  text-decoration: none;
+  font-family: var(--font1);
+  color: var(--primaryColor);
+}
+
+/* javascript classes */
+.showNav {
+  transform: translateX(0);
+}
+.transparentBcg {
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
   .nav-slide {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100vh;
-    height: 100vh;
-    z-index: 3;
-    background: var(--mainGrey);
-    padding: 1.5rem;
-    transition: var(--mainTransition);
-    transform: translateX(-100%);
+    width: 20vw;
+    min-width: 250px;
+    margin: auto;
   }
-  .nav-links {
-    position: absolute;
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    left: 0;
-  }
-  .nav-links li {
-    list-style: none;
-    padding: 20px;
-  }
-  .nav-links a {
-    text-decoration: none;
-    font-family: var(--font1);
-    color: var(--primaryColor);
-  }
+}
 
-  /* javascript classes */
-  .showNav {
-    transform: translateX(0);
+.close-nav {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.close-nav i {
+  float: right;
+}
+@media screen and (min-width: 375px) {
+  .nav-slide {
+    width: 20vw;
+    min-width: 250px;
+    margin: auto;
   }
-  .transparentBcg {
-    visibility: visible;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .nav-slide {
-      width: 20vw;
-      min-width: 250px;
-      margin: auto;
-    }
-  }
-  
-  .close-nav {
-    font-size: 1.7rem;
-    cursor: pointer;
-  }
-  .close-nav i {
-    float: right;
-  }
-  @media screen and (min-width: 375px) {
-    .nav-slide {
-      width: 20vw;
-      min-width: 250px;
-      margin: auto;
-    }
-  }
-  
-  .close-nav {
-    font-size: 1.7rem;
-    cursor: pointer;
-  }
-  .close-nav i {
-    float: left;
-  }
+}
 
-  ul.nav-links {
-    margin: 110px;
-  }
-  /* --------------- End of Nav Links ---------------- */
+.close-nav {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.close-nav i {
+  float: left;
+}
 
-  /* --------------- Hero ---------------- */
-  .hero {
-    min-height: calc(100vh - 60px); /* 100% of screen size minus height of navbar */
-    background: url("./images/hero-bcg.jpg") center/cover no-repeat; /* center image, cover entire div, no-repeat if image is too small */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .banner {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.8);
-    display: inline-block;
-    padding: 2rem;
-  }
-  .banner-title {
-    font-size: 3.4rem;
-    font-family: var(--font1);
-    text-transform: lowercase;
-    letter-spacing: var(--mainSpacing);
-    margin-bottom: 3rem;
-  }
-  .banner-btn {
-    padding: 1rem 3rem;
-    text-transform: uppercase;
-    letter-spacing: var(--mainSpacing);
-    font-size: 1rem;
-    background: var(--primaryColor);
-    color: var(--mainWhite);
-    border: 1px solid var(--primaryColor);
-    transition: var(--mainTransition);
-    cursor: pointer;
-  }
-  .banner-btn:hover {
-    background: transparent;
-    color: var(--primaryColor);
-  }
-  /* --------------- End of Hero ---------------- */
+ul.nav-links {
+  margin: 110px;
+}
+/* --------------- End of Nav Links ---------------- */
 
-  /* --------------- About Us ---------------- */
-  .about-us {
-    background-color: var(--primaryColor);
-    padding: 5em 0;
-    text-align: center;
-    letter-spacing: var(--mainSpacing);
-  }
-  .about-us h3 {
-    font-family: var(--font1);
-    color: var(--textBrown);
-    position: relative;
-    font-size: 1.5em;
-  }
-  .about-us button {
-    background: var(--mainWhite);
-    color: var(--primaryColor);
-    border: 1px solid var(--mainWhite);
-    margin-top: 3em;
-  }
-  .about-us button:hover {
-    background: transparent;
-    color: var(--mainWhite);
-  }
-  /* --------------- End of About Us ---------------- */
+/* --------------- Hero ---------------- */
+.hero {
+  min-height: calc(100vh - 60px); /* 100% of screen size minus height of navbar */
+  background: url("./images/hero-bcg.jpg") center/cover no-repeat; /* center image, cover entire div, no-repeat if image is too small */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.banner {
+  text-align: center;
+  background: rgba(255, 255, 255, 0.8);
+  display: inline-block;
+  padding: 2rem;
+}
+.banner-title {
+  font-size: 3rem;
+  font-family: var(--font1);
+  text-transform: lowercase;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 1rem;
+}
+.banner h2 {
+  font-size: 1.2em;
+  font-family: var(--font3);
+  text-transform: lowercase;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 3rem;
+}
+.banner-btn {
+  padding: 1rem 3rem;
+  text-transform: uppercase;
+  letter-spacing: var(--mainSpacing);
+  font-size: 1rem;
+  background: var(--primaryColor);
+  color: var(--mainWhite);
+  border: 1px solid var(--primaryColor);
+  transition: var(--mainTransition);
+  cursor: pointer;
+}
+.banner-btn:hover {
+  background: transparent;
+  color: var(--primaryColor);
+}
+/* --------------- End of Hero ---------------- */
 
-  /* --------------- Products ---------------- */
-  .products {
-    padding: 4rem 0;
-  }
-  .section-title h2 {
-    text-align: center;
-    font-family: var(--font1);
-    font-size: 2.5rem;
-    margin-bottom: 5rem;
-    text-transform: capitalize;
-    letter-spacing: var(--mainSpacing);
-  }
-  .products-center {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: 1170px;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* allows width of product img to fit on screen and change number of columns depending on that */
-    /* OTHER EXAMPLES
-    grid-template-columns: 1fr 1fr 1fr 1fr; but on a small screen it would not, so you would have to set up a media query
-    grid-template-columns: repeat(4, 1fr);
-    */
-    grid-column-gap: 1.5rem; /* sides gap */
-    grid-row-gap: 2rem; /* top/bottom gap */
-  }
-  .img-container {
-    position: relative;
-    overflow: hidden;
-  }
-  .bag-btn {
-    position: absolute;
-    top: 70%;
-    right: 0;
-    background: var(--primaryColor);
-    border: none;
-    text-transform: uppercase;
-    padding: 0.5rem 0.75rem;
-    letter-spacing: var(--mainSpacing);
-    font-weight: bold;
-    transition: var(--mainTransition);
-    transform: translateX(101%); /* hides button */
-    cursor: pointer;
-  }
-  .bag-btn:hover {
-    color: var(--mainWhite);
-  }
-  .fa-shopping-cart {
-    margin-right: 0.5rem;
-  }
-  .img-container:hover .bag-btn {
-    transform: translateX(0); /* allows button to become visible again */
-  }
-  .product-img {
-    display: block;
-    width: 100%;
-    min-height: 12rem;
-    transition: var(--mainTransition);
-  }
-  .img-container:hover .product-img {
-    opacity: 0.5;
-  }
-  
-  .product h3 {
-    text-transform: capitalize;
-    font-size: 1.1rem;
-    margin-top: 1rem;
-    letter-spacing: var(--mainSpacing);
-    text-align: center;
-  }
-  
-  .product h4 {
-    margin-top: 0.7rem;
-    letter-spacing: var(--mainSpacing);
-    color: var(--primaryColor);
-    text-align: center;
-  }
-  /* ---------------End of Products ---------------- */
+/* --------------- About Us ---------------- */
+.section-red {
+  background-color: var(--primaryColor);
+  padding: 5em 0;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+}
+.section-red h3 {
+  font-family: var(--font1);
+  color: var(--mainGrey);
+  position: relative;
+  font-size: 2em;
+}
+.section-red button {
+  background: var(--mainWhite);
+  color: var(--primaryColor);
+  border: 1px solid var(--mainWhite);
+  margin-top: 3em;
+}
+.section-red button:hover {
+  background: transparent;
+  color: var(--mainWhite);
+}
+/* --------------- End of About Us ---------------- */
 
-  /* ---------------Contact Us ---------------- */
-  /* ---------------End of Contact Us ---------------- */
+/* --------------- Instagram Tag ---------------- */
+.instagram-block {
+  background-color: var(--mainGrey);
+  padding: 1em 0;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  font-size: 30px;
+}
+.instagram-block h2 {
+  color: var(--mainBrown);
+}
+.insta-images {
+  vertical-align: middle;
+  justify-content: space-between;
+}
+.insta-images img {
+  max-width: 220px;
+  padding: 10px 5px;
+  object-fit: cover;
+}
+/* --------------- End of Instagram Tag ---------------- */
 
-  /* --------------- Cart ---------------- */
-    /*comment out visibility in ".cart-overlay" & transform in ".cart" to see cart before creating app.js */
-  .cart-overlay {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    transition: var(--mainTransition);
-    background: rgba(126, 29, 29, 0.5);
-    z-index: 2;
-    visibility: hidden; 
-  }
+/* --------------- Products ---------------- */
+.products {
+  padding: 4rem 0;
+}
+.section-title h2 {
+  text-align: center;
+  font-family: var(--font1);
+  font-size: 2.5rem;
+  margin-bottom: 5rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.products-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); /* allows width of product img to fit on screen and change number of columns depending on that */
+  /* OTHER EXAMPLES
+  grid-template-columns: 1fr 1fr 1fr 1fr; but on a small screen it would not, so you would have to set up a media query
+  grid-template-columns: repeat(4, 1fr);
+  */
+  grid-column-gap: 1.5rem; /* sides gap */
+  grid-row-gap: 2rem; /* top/bottom gap */
+}
+.img-container {
+  position: relative;
+  overflow: hidden;
+}
+.bag-btn {
+  position: absolute;
+  top: 70%;
+  right: 0;
+  background: var(--primaryColor);
+  border: none;
+  text-transform: uppercase;
+  padding: 0.5rem 0.75rem;
+  letter-spacing: var(--mainSpacing);
+  font-weight: bold;
+  transition: var(--mainTransition);
+  transform: translateX(101%); /* hides button */
+  cursor: pointer;
+}
+.bag-btn:hover {
+  color: var(--mainWhite);
+}
+.fa-shopping-cart {
+  margin-right: 0.5rem;
+}
+.img-container:hover .bag-btn {
+  transform: translateX(0); /* allows button to become visible again */
+}
+.product-img {
+  display: block;
+  width: 100%;
+  min-height: 12rem;
+  transition: var(--mainTransition);
+}
+.img-container:hover .product-img {
+  opacity: 0.5;
+}
+
+.product h3 {
+  text-transform: capitalize;
+  font-size: 1.1rem;
+  margin-top: 1rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+
+.product h4 {
+  margin-top: 0.7rem;
+  letter-spacing: var(--mainSpacing);
+  color: var(--primaryColor);
+  text-align: center;
+}
+/* ---------------End of Products ---------------- */
+/* ---------------Services ---------------- */
+.services {
+  background-color: var(--mainGrey);
+  padding: 2em;
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  font-size: 13px;
+}
+.services img {
+  width: 20%;
+}
+.services ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-gap: 1em;
+  list-style: none;
+}
+.services h3 {
+  font-family: var(--font1);
+  font-size: 12px;
+}
+.services figcaption {
+  padding: 1em 0;
+}
+.services p {
+  font-size: 15px;
+  padding: 0 15px;
+}
+
+/* ---------------End of Services ---------------- */
+/* ---------------Contact Us ---------------- */
+.section-contact {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  background: var(--primaryColor);
+  position: relative;
+}
+.contact-us {
+  width: 800px;
+  background: var(--mainGrey);
+  border-radius: 2px;
+  position: relative;
+  margin-top: 50px;
+  padding: 92px 70px 88px 70px;
+  box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 3px 20px 0px rgba(0, 0, 0, 0.1);
+}
+.contact-symbol {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  border: 1px solid var(--mainWhite);
+  border-radius: 50%;
+  background: var(--mainGrey);
+  top: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.contact-symbol i {
+  vertical-align: middle;
+  border-style: none;
+}
+.fas.fa-envelope {
+  max-width: 49px;
+  font-size: 49px;
+}
+.contact-form {
+  width: 100%;
+}
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+.flex-w {
+  flex-wrap: wrap;
+}
+.contact-form-title {
+  width: 100%;
+  display: block;
+  font-size: 30px;
+  text-align: center;
+  padding-bottom: 43px;
+}
+.wrap-input {
+  background-color: var(--mainWhite);
+  border: 1px solid var(--mainGrey);
+  border-radius: 2px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+.wrap-input.rs1 {
+  width: calc((100% - 20px) / 2);
+}
+.validate-input {
+  position: relative;
+}
+.input {
+outline: none;
+border: none;
+text-rendering: auto;
+letter-spacing: var(--mainSpacing);
+word-spacing: normal;
+text-transform: none;
+text-indent: 0px;
+text-shadow: none;
+text-align: start;
+cursor: text;
+display: block;
+background: transparent;
+line-height: 1.2;
+color: var(--mainBrown);
+width: 100%;
+cursor: text;
+}
+input.input {
+height: 60px;
+width: 100%;
+padding: 0 20px 0 25px;
+font-size: 20px;
+}
+.focus-input {
+position: absolute;
+display: block;
+width: calc(100% + 2px);
+height: calc(100% + 2px);
+top: -1px;
+left: -1px;
+pointer-events: none;
+border: 1px solid var(--primaryColor);
+border-radius: 2px;
+/* below for invalidated animation */
+visibility: hidden;
+opacity: 0; */
+transition: all 0.4s;
+transform: scaleX(1.1) scaleY(1.3);
+}
+textarea.input {
+min-height: 199px;
+padding: 25px 20px 15px 25px;
+font-size: 15px;
+}
+textarea {
+outline: none;
+border: none;
+overflow: auto;
+resize: vertical;
+}
+
+.contact-form-btn {
+width: 100%;
+display: flex;
+flex-wrap: wrap;
+justify-content: flex-end;
+margin-top: -10px;
+}
+
+/* ---------------End of Contact Us ---------------- */
+
+/* --------------- Cart ---------------- */
+  /*comment out visibility in ".cart-overlay" & transform in ".cart" to see cart before creating app.js */
+.cart-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  transition: var(--mainTransition);
+  background: rgba(126, 29, 29, 0.5);
+  z-index: 2;
+  visibility: hidden; 
+}
+.cart {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  z-index: 3;
+  background: var(--mainGrey);
+  padding: 1.5rem;
+  transition: var(--mainTransition);
+  transform: translateX(100%);
+}
+
+/* javascript classes */
+.showCart {
+  transform: translateX(0);
+}
+.transparentBcg {
+  visibility: visible;
+}
+
+@media screen and (min-width: 768px) {
   .cart {
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    overflow: scroll;
-    z-index: 3;
-    background: var(--mainGrey);
-    padding: 1.5rem;
-    transition: var(--mainTransition);
-    transform: translateX(100%);
+    width: 30vw;
+    min-width: 450px;
   }
+}
 
-  /* javascript classes */
-  .showCart {
-    transform: translateX(0);
-  }
-  .transparentBcg {
-    visibility: visible;
-  }
-  
-  @media screen and (min-width: 768px) {
-    .cart {
-      width: 30vw;
-      min-width: 450px;
-    }
-  }
-
-  .close-cart {
-    font-size: 1.7rem;
-    cursor: pointer;
-  }
-  .cart h2 {
-    text-transform: capitalize;
-    font-family: var(--font1);
-    text-align: center;
-    letter-spacing: var(--mainSpacing);
-    margin-bottom: 2rem;
-  }
-  /*---------- Cart Item -------------------- */
-  .cart-item {
-    display: grid;
-    align-items: center;
-    grid-template-columns: auto 1fr auto;
-    grid-column-gap: 1.5rem;
-    margin: 1.5rem 0;
-  }
-  .cart-item img {
-    width: 75px;
-    height: 75px;
-  }
-  .cart-item h4 {
-    font-size: 0.85rem;
-    text-transform: capitalize;
-    letter-spacing: var(--mainSpacing);
-  }
-  .cart-item h5 {
-    margin: 0.5rem 0;
-    letter-spacing: var(--mainSpacing);
-  }
-  .item-amount {
-    text-align: center;
-  }
-  .remove-item {
-    color: grey;
-    cursor: pointer;
-  }
-  .fa-chevron-up,
-  .fa-chevron-down {
-    color: var(--primaryColor);
-    cursor: pointer;
-  }
-  /*---------- End of Cart Item -------------------- */
-  .cart-footer {
-    margin-top: 2rem;
-    letter-spacing: var(--mainSpacing);
-    text-align: center;
-  }
-  .cart-footer h3 {
-    text-transform: capitalize;
-    margin-bottom: 1rem;
-  }
-  /* --------------- End of Cart ---------------- */
+.close-cart {
+  font-size: 1.7rem;
+  cursor: pointer;
+}
+.cart h2 {
+  text-transform: capitalize;
+  font-family: var(--font1);
+  text-align: center;
+  letter-spacing: var(--mainSpacing);
+  margin-bottom: 2rem;
+}
+/*---------- Cart Item -------------------- */
+.cart-item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: auto 1fr auto;
+  grid-column-gap: 1.5rem;
+  margin: 1.5rem 0;
+}
+.cart-item img {
+  width: 75px;
+  height: 75px;
+}
+.cart-item h4 {
+  font-size: 0.85rem;
+  text-transform: capitalize;
+  letter-spacing: var(--mainSpacing);
+}
+.cart-item h5 {
+  margin: 0.5rem 0;
+  letter-spacing: var(--mainSpacing);
+}
+.item-amount {
+  text-align: center;
+}
+.remove-item {
+  color: grey;
+  cursor: pointer;
+}
+.fa-chevron-up,
+.fa-chevron-down {
+  color: var(--primaryColor);
+  cursor: pointer;
+}
+/*---------- End of Cart Item -------------------- */
+.cart-footer {
+  margin-top: 2rem;
+  letter-spacing: var(--mainSpacing);
+  text-align: center;
+}
+.cart-footer h3 {
+  text-transform: capitalize;
+  margin-bottom: 1rem;
+}
+/* --------------- End of Cart ---------------- */
