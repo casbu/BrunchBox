@@ -1,164 +1,340 @@
 {
-    "items": [
-      {
-        "sys": { "id": "1" },
-        "fields": {
-          "title": "Coffee Beans",
-          "price": 5.99,
-          "image": { "fields": { "file": { "url": "./images/beverage-coffeebeans.jpg" } } }
-        }
+  "items": [
+    {
+      "sys": {
+        "id": "1"
       },
-      {
-        "sys": { "id": "2" },
-        "fields": {
-          "title": "Tea",
-          "price": 5.99,
-          "image": { "fields": { "file": { "url": "./images/beverage-tea.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "3" },
-        "fields": {
-          "title": "Baguette (Dozen)",
-          "price": 6.99,
-          "image": { "fields": { "file": { "url": "./images/bread-baguette.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "4" },
-        "fields": {
-          "title": "Water Crackers",
-          "price": 4.99,
-          "image": { "fields": { "file": { "url": "./images/bread-crackers.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "5" },
-        "fields": {
-          "title": "Sliced Bread - Variety",
-          "price": 9.99,
-          "image": { "fields": { "file": { "url": "./images/bread-slicedvariety.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "6" },
-        "fields": {
-          "title": "Aged Sharp Cheddar",
-          "price": 7.99,
-          "image": { "fields": { "file": { "url": "./images/cheese-agedsharpcheddar.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "7" },
-        "fields": {
-          "title": "Brie",
-          "price": 11.99,
-          "image": { "fields": { "file": { "url": "./images/cheese-brie.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "8" },
-        "fields": {
-          "title": "Natural Cranberry Goat Cheese",
-          "price": 13.99,
-          "image": { "fields": { "file": { "url": "./images/cheese-cranberrycheese.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "9" },
-        "fields": {
-          "title": "Swiss",
-          "price": 7.99,
-          "image": { "fields": { "file": { "url": "./images/cheese-swiss.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "10" },
-        "fields": {
-          "title": "Raw Honey",
-          "price": 14.99,
-          "image": { "fields": { "file": { "url": "./images/condiment-honey.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "11" },
-        "fields": {
-          "title": "Organic Spices",
-          "price": 22.99,
-          "image": { "fields": { "file": { "url": "./images/condiment-spices.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "12" },
-        "fields": {
-          "title": "Vegan Macaroons",
-          "price": 24.99,
-          "image": { "fields": { "file": { "url": "./images/dessert-veganmacaroons.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "13" },
-        "fields": {
-          "title": "Honey Crisp Apples",
-          "price": 3.99,
-          "image": { "fields": { "file": { "url": "./images/fruitandnuts-apple.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "14" },
-        "fields": {
-          "title": "Raw Organic Mixed Nuts",
-          "price": 11.99,
-          "image": { "fields": { "file": { "url": "./images/fruitandnuts-nuts.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "15" },
-        "fields": {
-          "title": "Royal Crown Pears",
-          "price": 3.99,
-          "image": { "fields": { "file": { "url": "./images/fruitandnuts-pear.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "16" },
-        "fields": {
-          "title": "Applewood Smoked Salami",
-          "price": 8.99,
-          "image": { "fields": { "file": { "url": "./images/meat-applewoodsmokedsalami.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "17" },
-        "fields": {
-          "title": "Dry Salami",
-          "price": 8.99,
-          "image": { "fields": { "file": { "url": "./images/meat-drysalami.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "18" },
-        "fields": {
-          "title": "Peppercorn and Garlic Salami",
-          "price": 8.99,
-          "image": { "fields": { "file": { "url": "./images/meat-peppercornandgarlicsalami.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "19" },
-        "fields": {
-          "title": "Hickory Summer Sausage",
-          "price": 8.99,
-          "image": { "fields": { "file": { "url": "./images/meat-summersausage.jpg" } } }
-        }
-      },
-      {
-        "sys": { "id": "19" },
-        "fields": {
-          "title": "Wine",
-          "price": 13.99,
-          "image": { "fields": { "file": { "url": "./images/wine.jpg" } } }
+      "fields": {
+        "title": "Organic Piñon Coffee",
+        "price": 5.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/beverage-coffeebeans.jpg"
+            }
+          }
         }
       }
-    ]
-  }
+    },
+    {
+      "sys": {
+        "id": "2"
+      },
+      "fields": {
+        "title": "Organic Variety Tea",
+        "price": 5.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/beverage-tea.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "3"
+      },
+      "fields": {
+        "title": "Multi-grain Baguette (Dozen)",
+        "price": 6.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/bread-baguette.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "4"
+      },
+      "fields": {
+        "title": "Fresh Water Crackers",
+        "price": 4.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/bread-crackers.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "5"
+      },
+      "fields": {
+        "title": "Sliced Bread - Multi-Grain Variety",
+        "price": 9.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/bread-slicedvariety.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "6"
+      },
+      "fields": {
+        "title": "Aged Sharp Cheddar",
+        "price": 7.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/cheese-agedsharpcheddar.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "7"
+      },
+      "fields": {
+        "title": "Semi-soft Brie",
+        "price": 11.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/cheese-brie.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "8"
+      },
+      "fields": {
+        "title": "Natural Cranberry Goat Cheese",
+        "price": 13.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/cheese-cranberrycheese.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "9"
+      },
+      "fields": {
+        "title": "Aged Swiss Cheese",
+        "price": 7.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/cheese-swiss.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "10"
+      },
+      "fields": {
+        "title": "Raw Organic Honey",
+        "price": 14.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/condiment-honey.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "11"
+      },
+      "fields": {
+        "title": "Organic Spices",
+        "price": 22.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/condiment-spices.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "12"
+      },
+      "fields": {
+        "title": "Vegan Macaroons",
+        "price": 24.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/dessert-veganmacaroons.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "13"
+      },
+      "fields": {
+        "title": "Honey Crisp Apples",
+        "price": 3.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/fruitandnuts-apple.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "14"
+      },
+      "fields": {
+        "title": "Raw Mixed Nuts",
+        "price": 11.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/fruitandnuts-nuts.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "15"
+      },
+      "fields": {
+        "title": "Royal Crown Pears",
+        "price": 3.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/fruitandnuts-pear.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "16"
+      },
+      "fields": {
+        "title": "Applewood Smoked Salami",
+        "price": 8.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/meat-applewoodsmokedsalami.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "17"
+      },
+      "fields": {
+        "title": "Dry Salami",
+        "price": 8.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/meat-drysalami.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "18"
+      },
+      "fields": {
+        "title": "Peppercorn and Garlic Salami",
+        "price": 8.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/meat-peppercornandgarlicsalami.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "19"
+      },
+      "fields": {
+        "title": "Hickory Summer Sausage",
+        "price": 8.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/meat-summersausage.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "19"
+      },
+      "fields": {
+        "title": "Red Wine",
+        "price": 14.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/wine.jpg"
+            }
+          }
+        }
+      }
+    },
+    {
+      "sys": {
+        "id": "20"
+      },
+      "fields": {
+        "title": "White Wine",
+        "price": 14.99,
+        "image": {
+          "fields": {
+            "file": {
+              "url": "./images/wine.jpg"
+            }
+          }
+        }
+      }
+    }
+  ]
+}
