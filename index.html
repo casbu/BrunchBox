@@ -6,10 +6,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>BrunchBox Subscription Box</title>
+  <!-- jquery -->
+  <script src="https://code.jquery.com/jquery-2.2.4.js" integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="
+    crossorigin="anonymous"></script>
   <!-- font awesome -->
   <script src="https://kit.fontawesome.com/ddf770238b.js" crossorigin="anonymous"></script>
+  <!-- sweet alert -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+  <script src="js/sweetalert2.js"></script>
+  <link rel="stylesheet" href="/css/sweetalert2.css">
   <!-- custom css -->
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
@@ -49,7 +56,7 @@
           <a class="products-link" href="#">Products</a>
         </li>
         <li>
-          <a class="contact-link" href="#">Contact</a>
+          <a id="popup-btn" onclick="contact_show();" class="contact-link" href="#">Contact</a>
         </li>
       </ul>
     </div>
@@ -94,6 +101,30 @@
     </div>
   </div>
   <!-- End of Instagram -->
+  <!-- How It Works -->
+  <section id="howitworks">
+    <div class="section-title">
+      <h2>how it works</h2>
+    </div>
+    <article class="howitworks-center">
+      <div class="img-container">
+        <img src="images/howitworks1.svg" alt="person adding items to cart">
+      </div>
+      <div class="img-container">
+        <img src="images/howitworks2.svg" alt="person riding a bike with a package ">
+      </div>
+      <div class="img-container">
+        <img src="images/howitworks3.svg" alt="group of friends drinking wine and eating">
+      </div>
+    </article>
+    <article class="howitworks-center">
+      <p>1. Build your brunch basket.</p>
+      <p>2. We deliver it straight to your door.</p>
+      <p>3. Enjoy a classy brunch with friends!</p>
+    </article>
+  </section>
+
+  <!-- End of How It Works -->
   <!-- Products -->
   <section class="products">
     <div class="section-title">
@@ -155,41 +186,38 @@
     </ul>
   </section>
   <!-- End of Services -->
-  <!-- Contact Us -->
-  <section class="section-contact">
-    <div class="contact-us">
-      <span class="contact-symbol">
-        <i class="fas fa-envelope"></i>
-      </span>
-      <form class="contact-form validate-form flex-sb flex-w">
-        <span class="contact-form-title">Drop Us a Message!</span>
-        <div class="wrap-input rs1 validate-input" data-validate="Name is required">
-          <input class="input" type="text" name="name" placeholder="Name">
-          <span class="focus-input"></span>
-        </div>
-        <div class="wrap-input rs1 validate-input" data-validate="Email is required: e@a.z">
-          <input class="input" type="text" name="email" placeholder="Email Address">
-          <span class="focus-input"></span>
-        </div>
-        <div class="wrap-input rs1 validate-input" data-validate="Subject is required">
-          <input class="input" type="text" name="subject" placeholder="Subject">
-          <span class=" focus-input"></span>
-        </div>
-        <div class="wrap-input rs1 validate-input">
-          <input class="input" type="text" name="id" placeholder="Order ID">
-          <span class="focus-input"></span>
-        </div>
-        <div class="wrap-input validate-input" data-validate="Message is required:">
-          <textarea class="input" name="message" placeholder="Write Your Message Here..."></textarea>
-          <span class="focus-input"></span>
-        </div>
-        <div class="contact-form-btn">
-          <button class="banner-btn">Send</button>
-        </div>
+  <!--! ------------------------------------------------- -->
+
+  <!-- Subscriber Alert -->
+  <div id="popupSubscribe">
+    <div class="sub_modalContent">
+      <h1>Join the club!</h1>
+      <div class="sub-image">
+        <img src="images/sub_image.jpg" alt="">
+      </div>
+      <p>Get an exclusive newcomer discount sent straight to your email!</p>
+      <form action="#" id="form" name="sub_form" method="post" action="php/subscribe.php">
+        <input id="sub_email" name="email" placeholder="Email" type="text"></form>
+      <button id="button" class="subscribe-btn">Close</button>
+    </div>
+  </div>
+  <!-- End of Subscriber Alert -->
+  <!-- Popup Contact Form -->
+  <div id="popupContact">
+    <div id="popupModal">
+      <!-- Contact Us Form -->
+      <form action="#" id="contact_form" name="form" method="post" action="php/contact.php">
+        <i id="close" class="fas fa-window-close" onclick="contact_hide();"></i>
+        <h2>Contact Us</h2>
+        <hr>
+        <input id="name" name="name" placeholder="Name" type="text"></input>
+        <input id="email" name="email" placeholder="Email" type="text"></input>
+        <textarea id="msg" name="message" placeholder="Message"></textarea></input>
+        <button id="submit" name="submit" class="banner-btn" onclick="check_empty();">Send</button>
       </form>
     </div>
-  </section>
-  <!-- End of Contact Us -->
+  </div>
+  <!-- End Popup Contact Form -->
   <!-- Cart -->
   <!-- cart background overlay -->
   <div class="cart-overlay">
@@ -213,7 +241,14 @@
   </div>
   <!-- End of Cart -->
 
-  <script src="app.js"></script>
+
+  <script src="js/subscribe.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/contact.js"></script>
+
 </body>
+<footer>
+
+</footer>
 
 </html>
