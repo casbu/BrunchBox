@@ -86,18 +86,6 @@ The following areas are being actively developed or refined:
 - Application security improvements.
 - Alternative data storage options.
 
-## Planned Enhancements
-
-Future development may include:
-
-- **Parcel:** Exploring a build tool for asset bundling and development workflows.
-- **jQuery:** Evaluating its potential use for selected DOM interactions.
-- **Contentful:** Exploring a content management solution for product and storefront content.
-- **Security:** Strengthening input validation, form handling, and application safeguards.
-- **Storage:** Evaluating alternatives to browser-based product and cart storage.
-
-*These enhancements are planned and are not represented as completed integrations.*
-
 ## Getting Started
 
 1. Clone the repository:
@@ -120,18 +108,3 @@ BrunchBox currently demonstrates front-end e-commerce functionality, including p
 
 The provided implementation does not establish a completed payment-processing or checkout integration. The application should be considered a development project rather than a production-ready storefront.
 
-## Development & Ownership
-
-Independently developed as a hands-on web application project, with responsibilities spanning:
-
-- Front-end application development
-- JavaScript functionality and DOM manipulation
-- Product data handling
-- Shopping cart state management
-- UI interactions and navigation
-- PHP contact form implementation
-- Ongoing debugging, refinement, and feature development
-
-## License
-
-No license has been specified. All rights are reserved unless a license is added to the repository.
